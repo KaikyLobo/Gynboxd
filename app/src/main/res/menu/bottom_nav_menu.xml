@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_inicio" android:icon="@drawable/ic_home" android:title="Início"/>
+    <item android:id="@+id/nav_lugares" android:icon="@drawable/ic_place" android:title="Cafés, bares e festas"/>
+    <item android:id="@+id/nav_diario" android:icon="@drawable/ic_menu_book" android:title="Diário"/>
+    <item android:id="@+id/nav_perfil" android:icon="@drawable/ic_person" android:title="Perfil"/>
+</menu>
+<!--Ajustar quando tiver com todos os diretorios criados -->
