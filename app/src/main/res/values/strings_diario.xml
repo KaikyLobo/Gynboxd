@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titulo_diario">Seu diário</string>
+    <string name="aba_diario">Diário</string>
+    <string name="aba_avaliacoes">Avaliações</string>
+
+    <string name="label_roles">rolês</string>
+    <string name="label_avaliacoes">avaliados</string>
+    <string name="label_media">nota média</string>
+
+    <string name="titulo_date_picker">Quando foi o rolê?</string>
+    <string name="novo_role">Novo rolê</string>
+    <string name="local_a_definir">Local a definir</string>
+    <string name="role_registrado">Rolê registrado em %1$s</string>
+
+    <string name="desc_adicionar">Registrar rolê</string>
+    <string name="desc_capa">Capa do evento</string>
+    <string name="voltar">Voltar</string>
+    <string name="evento_sem_nome">Evento</string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:padding="16dp"
+    tools:context=".EventoDetalheActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVoltar"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/voltar"
+        android:textColor="@color/text_primary"
+        app:icon="@drawable/ic_voltar"
+        app:iconTint="@color/text_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivCapa"
+        android:layout_width="96dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/desc_capa"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnVoltar"
+        app:shapeAppearanceOverlay="@style/Gyn.CantoArredondado"
+        tools:src="@drawable/capa_3" />
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/text_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCapa"
+        app:layout_constraintTop_toTopOf="@id/ivCapa"
+        tools:text="Deboxe Imperium" />
+
+    <TextView
+        android:id="@+id/tvLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintEnd_toEndOf="@id/tvNome"
+        app:layout_constraintStart_toStartOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvNome"
+        tools:text="Setor Marista" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_secondary"
+        app:layout_constraintEnd_toEndOf="@id/tvNome"
+        app:layout_constraintStart_toStartOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvLocal"
+        tools:text="05 de setembro de 2026" />
+
+    <RatingBar
+        android:id="@+id/ratingNota"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressBackgroundTint="@color/divider"
+        android:progressTint="@color/green"
+        android:secondaryProgressTint="@color/green"
+        android:stepSize="0.5"
+        app:layout_constraintStart_toStartOf="@id/tvNome"
+        app:layout_constraintTop_toBottomOf="@id/tvData" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
