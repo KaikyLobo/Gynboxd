@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    android:fitsSystemWindows="true">
+    android:background="@color/bg">
 
     <!-- TOP BAR -->
     <LinearLayout
@@ -23,7 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Gynboxd"
+            android:text="@string/app_name"
             android:textColor="@color/green"
             android:textSize="18sp"
             android:textStyle="bold"/>
@@ -59,59 +60,65 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:overScrollMode="never"
         app:layout_constraintTop_toBottomOf="@id/divTop"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintBottom_toTopOf="@id/divBottom"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
 
             <TextView
                 style="@style/SectionTitle"
                 android:text="ATIVIDADE RECENTE"/>
 
-            <include layout="@layout/item_atividade"/>
-            <include layout="@layout/item_atividade"/>
-            <include layout="@layout/item_atividade"/>
-
-            <View
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAtividades"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/divider"/>
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_atividade"/>
 
             <TextView
                 style="@style/SectionTitle"
                 android:text="EM ALTA ESSA SEMANA"/>
 
-            <HorizontalScrollView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDestaques"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
                 android:clipToPadding="false"
-                android:paddingHorizontal="16dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <include layout="@layout/item_destaque"/>
-                    <include layout="@layout/item_destaque"/>
-                    <include layout="@layout/item_destaque"/>
-                </LinearLayout>
-            </HorizontalScrollView>
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingHorizontal="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_destaque"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <!-- LINHA ACIMA DA BOTTOM NAV -->
+    <View
+        android:id="@+id/divBottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- BOTTOM NAV -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
+        style="@style/Widget.Gynboxd.BottomNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/surface"
         app:menu="@menu/bottom_nav_menu"
         app:itemIconTint="@color/nav_item_color"
         app:itemTextColor="@color/nav_item_color"
