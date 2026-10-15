@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/raiz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    tools:context=".PerfilActivity">
+
+    <!-- Faixa colorida do topo (atrás da foto) -->
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="0dp"
+        android:layout_height="105dp"
+        android:background="@color/header_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="58dp"
+        android:contentDescription="@string/desc_foto_perfil"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_avatar_orange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Gynboxd.Circulo" />
+
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/perfil_nome"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgPerfil"
+        app:layout_constraintTop_toTopOf="@id/imgPerfil" />
+
+    <TextView
+        android:id="@+id/txtUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/perfil_usuario"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/txtNome"
+        app:layout_constraintStart_toStartOf="@id/txtNome"
+        app:layout_constraintTop_toBottomOf="@id/txtNome" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSeguindo"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/perfil_seguindo"
+        android:textColor="@color/bg"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/green"
+        app:cornerRadius="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
+
+    <!-- 4 números em chain horizontal: dividem a largura igualmente em qualquer tela -->
+    <TextView
+        android:id="@+id/txtRoles"
+        style="@style/Perfil.Numero"
+        android:layout_width="0dp"
+        android:text="@string/perfil_roles"
+        app:layout_constraintEnd_toStartOf="@id/txtEsteAno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSeguindo" />
+
+    <TextView
+        android:id="@+id/txtEsteAno"
+        style="@style/Perfil.Numero"
+        android:layout_width="0dp"
+        android:text="@string/perfil_este_ano"
+        app:layout_constraintEnd_toStartOf="@id/txtListas"
+        app:layout_constraintStart_toEndOf="@id/txtRoles"
+        app:layout_constraintTop_toBottomOf="@id/btnSeguindo" />
+
+    <TextView
+        android:id="@+id/txtListas"
+        style="@style/Perfil.Numero"
+        android:layout_width="0dp"
+        android:text="@string/perfil_listas"
+        app:layout_constraintEnd_toStartOf="@id/txtSeguidores"
+        app:layout_constraintStart_toEndOf="@id/txtEsteAno"
+        app:layout_constraintTop_toBottomOf="@id/btnSeguindo" />
+
+    <TextView
+        android:id="@+id/txtSeguidores"
+        style="@style/Perfil.Numero"
+        android:layout_width="0dp"
+        android:text="@string/perfil_seguidores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txtListas"
+        app:layout_constraintTop_toBottomOf="@id/btnSeguindo" />
+
+    <TextView
+        android:id="@+id/txtFavoritos"
+        style="@style/SectionTitle"
+        android:layout_width="0dp"
+        android:text="@string/perfil_titulo_favoritos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtRoles" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerFavoritos"
+        android:layout_width="0dp"
+        android:layout_height="112dp"
+        android:clipToPadding="false"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtFavoritos"
+        tools:listitem="@layout/item_favorito"
+        tools:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/txtListasTitulo"
+        style="@style/SectionTitle"
+        android:layout_width="0dp"
+        android:text="@string/perfil_titulo_listas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerFavoritos" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerListas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/divBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtListasTitulo"
+        tools:listitem="@layout/item_lista" />
+
+    <!-- Linha acima da barra inferior (padrão da home) -->
+    <View
+        android:id="@+id/divBottom"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Barra inferior padrão (estilo em themes.xml, navegação em BaseActivity) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        style="@style/Widget.Gynboxd.BottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:itemIconTint="@color/nav_item_color"
+        app:itemTextColor="@color/nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

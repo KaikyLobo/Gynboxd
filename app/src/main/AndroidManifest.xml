@@ -21,6 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Telas internas: só abrem por Intent explícita de dentro do app -->
+        <activity
+            android:name=".DiarioActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EventoDetalheActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Gynboxd</string>
+
+    <!-- Textos compartilhados por várias telas -->
+    <string name="tela_em_construcao">Tela em construção</string>
+    <string name="voltar">Voltar</string>
+    <string name="desc_capa">Capa do evento</string>
+    <string name="desc_buscar">Buscar</string>
+    <string name="desc_notificacoes">Notificações</string>
+    <string name="evento_sem_nome">Evento</string>
 </resources>
