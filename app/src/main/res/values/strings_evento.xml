@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="evento_sua_nota">sua nota</string>
+    <string name="evento_sem_nota">sem avaliação</string>
+    <string name="evento_descricao_pendente">Descrição ainda não cadastrada.</string>
+    <string name="evento_sem_criticas">NENHUMA CRÍTICA CADASTRADA</string>
+    <string name="evento_capa_de">Capa de %1$s</string>
+    <string name="evento_marcar_presenca">Marcar presença</string>
+    <string name="evento_favoritar">Favoritar evento</string>
+    <string name="evento_selecionado">selecionado</string>
+    <string name="evento_nao_selecionado">não selecionado</string>
+    <string name="evento_adicionar_listas">Adicionar às listas</string>
+    <string name="evento_cancelar">Cancelar</string>
+    <string name="evento_salvar">Salvar</string>
+    <string-array name="evento_listas">
+        <item>Preciso ir</item>
+        <item>Melhores de 2026</item>
+    </string-array>
+</resources>

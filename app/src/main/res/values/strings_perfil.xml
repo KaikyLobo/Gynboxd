@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="perfil_nome">Matheus Oliveira</string>
+    <string name="perfil_usuario">\@matheusco</string>
+    <string name="perfil_seguindo">SEGUINDO</string>
+    <string name="perfil_seguir">SEGUIR</string>
+
+    <string name="perfil_roles">312\nrolês</string>
+    <string name="perfil_este_ano">58\neste ano</string>
+    <string name="perfil_listas">19\nlistas</string>
+    <string name="perfil_seguidores">204\nseguidores</string>
+
+    <string name="perfil_titulo_favoritos">LUGARES FAVORITOS</string>
+    <string name="perfil_titulo_listas">LISTAS</string>
+
+    <string name="desc_foto_perfil">Foto de perfil</string>
+    <string name="desc_lugar_favorito">Lugar favorito</string>
+    <string name="desc_imagem_lista">Imagem da lista</string>
+</resources>
